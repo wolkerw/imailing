@@ -1,0 +1,17 @@
+services:
+  javascript-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: javascript-app
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    init: true
+    # env_file: ./.env  # Uncomment if .env file exists
+    # No external dependencies required as per README
+    # Runs as non-root user for security
+    # Exposes port 5000 as per Dockerfile and README
+
+# No external services (databases, caches, etc.) detected in documentation or source
+# No volumes section needed as there is no persistent data requirement
